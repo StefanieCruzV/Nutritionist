@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
+  <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <title>All Patientas</title>
+</head>
+
+<body class="imgbindex">
+  <nav class="navbar bgnavbar  w-75 mx-auto d-block my-3 p-3 opacity-75 rounded-pill  ">
+    <div class="container-fluid">
+      <a class="navbar-brand navbartitle" href="#">
+        <img src="static/img/22.png" alt="Logo" class="d-inline-block align-text-top sizeima">
+        B-Healty
+      </a>
+      <form class="d-flex" role="search">
+      
+      </form>
+    </div>
+  </nav>
+
+
+  <div class="container w-75 marginconta">
+      <div class="row">
+        <div class="col">
+          <h1 class="text-white">Cret an acoun as: </h1>
+          <div class="d-grid gap-2 col-6 mx-auto">
+            <button class="btn btn-success d-block  my-3 p-3" type="button" onclick="location.href='/patient'">Patient</button>
+            <button class="btn btn-success d-block  my-3 p-3" type="button" onclick="location.href='/doctor'">Doctor</button>
+          </div>
+        </div>
+
+        <div class="col w-75 mx-auto rounded bg-white bg-opacity-75 text-black">
+          <h1 class="bcolor1 text-center"> Our goal</h1>
+          <p class=" my-3 p-3">
+            <span class="bcolor">Nutricion</span> is important to everyone.<br>
+
+            Combined with physical activity and a healthy weight, eating well is a great way to help your body stay strong and healthy.<br>
+            
+            Healthy eating is eating a variety of foods that give you the nutrients you need to stay healthy, feel good, and have energy.<br>
+            These nutrients include proteins, carbohydrates, fats, water, vitamins, and minerals.
+            
+            Remember, the most important thing about a good diet is <span class="bcolor">BALANCE</span> that's why we created this application to help you eat healthy</p>
+        </div>
+      </div>
+  
+      <nav class="navbar bgnavbar  w-25 ms-auto d-block my-3 p-3 opacity-75 rounded-pill  ">
+        <div class="container-fluid">
+          <a class="navbar-brand navbartitle" href="#">
+            <img src="static/img/whatsapp.png" alt="Logo" class="d-inline-block align-text-top sizeima">
+          </a>
+          <a class="navbar-brand navbartitle" href="#">
+            <img src="static/img/instagram.png" alt="Logo" class="d-inline-block align-text-top sizeima">
+          </a>
+          <a class="navbar-brand navbartitle" href="#">
+            <img src="static/img/facebook.png" alt="Logo" class="d-inline-block align-text-top sizeima">
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

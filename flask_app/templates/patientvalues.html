@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>All Patientas</title>
+</head>
+
+<body class="imgbvalues">
+    <nav class="navbar bgnavbar  w-75 mx-auto d-block my-3 p-3 opacity-75 rounded-pill  ">
+        <div class="container-fluid">
+            <a class="navbar-brand navbartitle" href="#">
+                <!-- <img src="static/img/22.png" alt="Logo" class="d-inline-block align-text-top sizeima"> -->
+                B-Healty
+            </a>
+            <form class="d-flex" role="search">
+                <a class="text-success navalink" href="/success">Home</a>
+                <a class="text-success navalink" href="/">Logout</a>
+            </form>
+        </div>
+    </nav>
+   
+    <div class="container text-center ">
+        <h1 class="text-white">Stefanie Alondra</h1>
+        <form class="w-75 mx-auto my-3 p-3  rounded bg-dark bg-opacity-75 text-white " action="/edit_values/patient/{{patientId}}" method="post">
+            <h2 class="text-success">Nutricional Values</h2>
+            {% with messages = get_flashed_messages() %}<!-- declare a variable called messages -->
+            {% if messages %}                         <!-- check if there are any messages -->
+              {% for message in messages %}           <!-- loop through the messages -->
+                <p class="bg-danger text-white border text-center" >{{message}}</p>                    <!-- display each message in a paragraph tag -->
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+
+            <div class="container text-center">
+                <div class="row containermeasures">
+                    <div class="col-auto">
+                        <label for="Energy" class="col-form-label">Energy</label>
+                        <input type="text" class="form-control" name="energy">
+                    </div>
+                </div>
+                <div class="row w-50 mx-auto containermeasures ">
+                    <div class="col">
+                        <label for="current" class="col-form-label">Current Weight</label>
+                        <input type="text" class="form-control" name="weight">
+                    </div>
+                    <div class="col">
+                        <label for="goal" class="col-form-label">Goal Weight</label>
+                        <input type="text" class="form-control" name="goal_w">
+                    </div>
+                </div>
+
+                <h3 class="text-success my-3">Measures</h3>
+
+                <div class="row w-50 mx-auto containermeasures ">
+                    <div class="col">
+                        <label for="arm" class="col-form-label">Arm</label>
+                        <input type="text" class="form-control" name="arm">
+                    </div>
+                    <div class="col">
+                        <label for="hip" class="col-form-label">Hip</label>
+                        <input type="text" class="form-control" name="hip">
+                    </div>
+                    <div class="col">
+                        <label for="waist" class="col-form-label">Waist</label>
+                        <input type="text" class="form-control" name="waist">
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-success my-3">Submit</button>
+        </form>
+
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>

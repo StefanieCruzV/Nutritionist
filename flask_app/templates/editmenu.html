@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
+  <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <title>All Patientas</title>
+</head>
+
+<body class="imgcreatemenu">
+  <nav class="navbar bgnavbar  w-75 mx-auto d-block my-3 p-3 opacity-75 rounded-pill  ">
+    <div class="container-fluid">
+      <a class="navbar-brand navbartitle" href="#">
+        <img src="static/img/22.png" alt="Logo" class="d-inline-block align-text-top sizeima">
+        B-Healty
+      </a>
+      <form class="d-flex" role="search">
+
+        <a class="text-success navalink" href="/logout">Logout</a>
+      </form>
+    </div>
+  </nav>
+
+  <div class="container w-75 p-3 extram ">
+    <form action="/save_menu" method="post">
+      <table class="table   w-100 mx-auto rounded bg-white bg-opacity-75 text-black" name="table">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col text-center">Vegetables</th>
+            <th scope="col text-center">Fruits</th>
+            <th scope="col text-center">Grains</th>
+            <th scope="col text-center">Protein</th>
+            <th scope="col text-center">Fats and oils</th>
+
+          </tr>
+        </thead>
+        <tbody class="my-3">
+          <tr name="tr_vegetables">
+            <th scope="row">Breakfast
+              <h6>Portions</h6>
+            </th>
+            <td class="text-center" name="td_vegetables">
+
+              <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="vegetable_b">
+                {% for vegetable in vegetables%}
+                <option value="{{vegetable.food_id}}">{{vegetable.name}}</option>
+                {%endfor%}
+              </select>
+  
+              <input class="inputa " type="number" id="quantity" name="qvb" min="0" max="10" value="0">
+              <!-- <input type="hidden" name="vegetable" value="1"> -->
+              <!-- <p><button class="buttonplus rounded-pill"> + </button> 0<button class="buttonplus rounded-pill"> -
+                </button></p> -->
+            </td>
+            <td class="text-center">
+              <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="fruit_b">
+                {% for fruit in fruits%}
+                <option  value="{{fruit.food_id}}">{{fruit.name}}</option>
+                {%endfor%}
+              </select>
+              <input class="inputa " type="number" id="quantity" name="qfb" min="0" max="10" value="0">
+            </td>
+            <td class="text-center">
+              <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="grain_b">
+                {% for grain in grains%}
+                <option  value="{{grain.food_id}}">{{grain.name}}</option>
+                {%endfor%}
+              </select>
+              <input class="inputa " type="number" id="quantity" name="qgb" min="0" max="10" value="0">
+            </td>
+            <td class="text-center">
+              <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="protein_b">
+                {% for protein in proteins%}
+                <option  value="{{protein.food_id}}">{{protein.name}}</option>
+                {%endfor%}
+              </select>
+              <input class="inputa " type="number" id="quantity" name="qpb" min="0" max="10" value="0">
+            </td>
+            <td class="text-center">
+              <select class="form-select form-select-sm" aria-label=".form-select-sm example"  name="fat_b">
+                {% for fat in fats%}
+                <option  value="{{fat.food_id}}">{{fat.name}}</option>
+                {%endfor%}
+              </select>
+              <input class="inputa " type="number" id="quantity" name="qfab" min="0" max="10" value="0">
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Lunch
+              <h6>Portions</h6>
+            </th>
+            <td class="text-center">
+              <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="vegetable_l">
+                {% for vegetable in vegetables%}
+                <option value="{{vegetable.food_id}}">{{vegetable.name}}</option>
+                {%endfor%}
+              </select>
+              <input class="inputa " type="number" id="quantity" name="qvl" min="0" max="10" value="0">
+            </td>
+            <td class="text-center">
+              <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="fruit_l">
+                {% for fruit in fruits%}
+                <option value="{{fruit.food_id}}">{{fruit.name}}</option>
+                {%endfor%}
+              </select>
+              <input class="inputa " type="number" id="quantity" name="qfl" min="0" max="10" value="0">
+            </td>
+            <td class="text-center">
+              <select class="form-select form-select-sm" aria-label=".form-select-sm example"  name="grain_l">
+                {% for grain in grains%}
+                <option  value="{{grain.food_id}}">{{grain.name}}</option>
+                {%endfor%}
+              </select>
+              <input class="inputa " type="number" id="quantity" name="qgl" min="0" max="10" value="0">
+            </td>
+            <td class="text-center">
+              <select class="form-select form-select-sm" aria-label=".form-select-sm example"  name="protein_l">
+                {% for protein in proteins%}
+                <option value="{{protein.food_id}}">{{protein.name}}</option>
+                {%endfor%}
+              </select>
+              <input class="inputa " type="number" id="quantity" name="qpl" min="0" max="10" value="0">
+            </td>
+            <td class="text-center">
+              <select class="form-select form-select-sm" aria-label=".form-select-sm example"  name="fat_l">
+                {% for fat in fats%}
+                <option value="{{fat.food_id}}">{{fat.name}}</option>
+                {%endfor%}
+              </select>
+              <input class="inputa " type="number" id="quantity" name="qfal" min="0" max="10" value="0">
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Snack
+              <h6>Portions</h6>
+            </th>
+            <td class="text-center">
+              <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="vegetable_s">
+                {% for vegetable in vegetables%}
+                <option  value="{{vegetable.food_id}}">{{vegetable.name}}</option>
+                {%endfor%}
+              </select>
+              <input class="inputa " type="number" id="quantity" name="qvs" min="0" max="10" value="0">
+            </td>
+            <td class="text-center">
+              <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="fruit_s">
+                {% for fruit in fruits%}
+                <option value="{{fruit.food_id}}">{{fruit.name}}</option>
+                {%endfor%}
+              </select>
+              <input class="inputa " type="number" id="quantity" name="qfs" min="0" max="10" value="0">
+            </td>
+            <td class="text-center">
+              <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="grain_s">
+                {% for grain in grains%}
+                <option value="{{grain.food_id}}">{{grain.name}}</option>
+                {%endfor%}
+              </select>
+              <input class="inputa " type="number" id="quantity" name="qgs" min="0" max="10" value="0">
+            </td>
+            <td class="text-center">
+              <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="protein_s">
+                {% for protein in proteins%}
+                <option  value="{{protein.food_id}}">{{protein.name}}</option>
+                {%endfor%}
+              </select>
+              <input class="inputa " type="number" id="quantity" name="qps" min="0" max="10" value="0">
+            </td>
+            <td class="text-center">
+              <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="fat_s">
+                {% for fat in fats%}
+                <option  value="{{fat.food_id}}">{{fat.name}}</option>
+                {%endfor%}
+              </select>
+              <input class="inputa " type="number" id="quantity" name="qfas" min="0" max="10" value="0">
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Dinner
+              <h6>Portions</h6>
+            </th>
+            <td class="text-center">
+              <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="vegetable_d">
+                {% for vegetable in vegetables%}
+                <option  value="{{vegetable.food_id}}">{{vegetable.name}}</option>
+                {%endfor%}
+              </select>
+              <input class="inputa " type="number" id="quantity" name="qvd" min="0" max="10" value="0">
+            </td>
+            <td class="text-center">
+              <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="fruit_d">
+                {% for fruit in fruits%}
+                <option value="{{fruit.food_id}}">{{fruit.name}}</option>
+                {%endfor%}
+              </select>
+              <input class="inputa " type="number" id="quantity" name="qfd" min="0" max="10" value="0">
+            </td>
+            <td class="text-center">
+              <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="grain_d">
+                {% for grain in grains%}
+                <option value="{{grain.food_id}}">{{grain.name}}</option>
+                {%endfor%}
+              </select>
+              <input class="inputa " type="number" id="quantity" name="qgd" min="0" max="10" value="0">
+            </td>
+            <td class="text-center">
+              <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="protein_d">
+                {% for protein in proteins%}
+                <option  value="{{protein.food_id}}">{{protein.name}}</option>
+                {%endfor%}
+              </select>
+              <input class="inputa " type="number" id="quantity" name="qpd" min="0" max="10" value="0">
+            </td>
+            <td class="text-center">
+              <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="fat_d">
+                {% for fat in fats%}
+                <option  value="{{fat.food_id}}">{{fat.name}}</option>
+                {%endfor%}
+              </select>
+              <input class="inputa " type="number" id="quantity" name="qfad" min="0" max="10" value="0">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button type="submit" class="btn btn-success">Save</button>
+    </form>
+  </div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>All Patientas</title>
+</head>
+<body class="imgbd">
+  <nav class="navbar bgnavbar  w-75 mx-auto d-block my-3 p-3 opacity-75 rounded-pill  ">
+    <div class="container-fluid">
+      <a class="navbar-brand navbartitle" href="#">
+        <img src="static/img/22.png" alt="Logo" class="d-inline-block align-text-top sizeima">
+        B-Healty
+      </a>
+   
+    </div>
+  </nav>
+
+<div class="container w-75">
+  {% with messages = get_flashed_messages() %}<!-- declare a variable called messages -->
+  {% if messages %}                         <!-- check if there are any messages -->
+    {% for message in messages %}           <!-- loop through the messages -->
+      <p class="bg-danger text-white border text-center" >{{message}}</p>                    <!-- display each message in a paragraph tag -->
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+  <div class="row">
+    <div class="col">
+        <form class="w-75 mx-auto d-block my-3 p-3  rounded bg-dark bg-opacity-75 text-white" action="/login_doctor" method="post">
+            <h1 class="text-success">Login</h1>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input name="email" type="email" class="form-control" />
+            </div>
+            <div class="mb-3">
+              <label for="pasword" class="form-label">Password</label>
+              <input name="password" type="password" class="form-control" />
+            </div>
+            <button type="submit" class="btn btn-success">Submit</button>
+          </form>
+
+    </div>
+
+    <div class="col">
+        <form class="w-75 mx-auto d-block my-3 p-3  rounded bg-dark bg-opacity-75 text-white" action="/register/doctor" method="post">
+            <h1 class="text-success">Register</h1>
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input name="first_name" type="text" class="form-control" />
+            </div>
+            <div class="mb-3">
+              <label for="lastname" class="form-label">Last Name</label>
+              <input name="last_name" type="text" class="form-control" />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input name="email" type="email" class="form-control" />
+            </div>
+            <div class="mb-3">
+              <label for="pasword" class="form-label">Password</label>
+              <input name="password" type="password" class="form-control" />
+            </div>
+            <div class="mb-3">
+              <label for="confirmpasword" class="form-label">Confirm Password</label>
+              <input name="confirmpassword" type="password" class="form-control" />
+            </div>
+            <button type="submit" class="btn btn-success">Submit</button>
+          </form>
+      
+    </div>
+  </div>
+  </div>
+  </form>
+</div>
+</div>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
+    
+</body>
+</html>

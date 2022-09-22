@@ -1,0 +1,123 @@
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.imgbd{
+    background-image: url('img/11.jpeg');
+    background-size: cover;
+  
+  }
+
+.imgbp{
+    background-image: url('img/777.png');
+    background-size: cover;
+  }
+
+.imgball{
+  background-image: url('img/121212.jpeg');
+  background-size: cover;
+}
+
+.imgbvalues{
+  background-image: url('img/1111111.jpeg');
+  background-size: cover;
+}
+.imgprogress{
+  background-image: url('img/a.jpeg');
+  background-size: cover;
+}
+.imgshowmenu{
+  background-image: url('img/ere.jpeg');
+  background-size: cover;
+}
+.imgcreatemenu{
+   background-image: url('img/333.jpeg');
+  background-size: cover;
+}
+
+.navbartitle {
+    font-size: 45px;
+    color: white;
+    
+}
+
+.imgbindex{
+  background-image: url('img/ghgh.jpeg');
+  background-size: cover;
+}
+
+
+.sizeima{
+    width: 50px;
+    height: 50px;
+}
+
+.bgnavbar{
+  background-color:  #114425;
+  font-weight: bold;
+
+}
+
+.navalink{
+  font-size: 20px;
+  color: aliceblue !important;
+  margin: 20px;
+  padding: 10px;
+  text-decoration: none;
+
+}
+.containermeasures h3{
+  margin: 3%;
+  padding: 10px;
+}
+.bcolor{
+  color: #114425;
+  font-size: large;
+  font-weight: bold;
+}
+.bcolor1{
+  color: #114425;
+}
+.marginconta{
+  margin-top: 100px;
+}
+.imcsize{
+  width: 500px;
+  height: 400px;
+  opacity: 0.8;
+}
+.colorp{
+  color: #db5e3d;
+}
+.extram{
+  margin-top: 6%;
+}
+
+.buttonplus{
+  background-color:transparent;
+  border: none;
+  padding: 4px; 
+  color:#114425;
+  font-size: medium;
+  margin: 0px 5px;
+
+
+
+}
+h6{
+  color: rgb(152, 149, 149);
+  font-size: smaller;
+}
+
+.inputa {
+  margin: 5px;
+   padding: 2px; 
+  text-align: center;  
+  border: 1px solid #114425;
+  background-color: transparent;
+  border-radius: 25px;
+
+} 
+
